@@ -14,7 +14,7 @@ Click here to download and install: [Download](https://github.com/kieran-lucas/b
 ## Design
 The app will look like that: 
 <p align="center">
-  <img src="assets/interface.png" width="850"/>
+  <img src="assets/interface.png" width="600"/>
 </p>
 
 
