@@ -25,7 +25,7 @@ class DirectionFieldApp(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Direction Field App")
-        self.resize(700, 700)
+        self.resize(750, 750)
 
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
