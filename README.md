@@ -12,7 +12,7 @@ The mathematical significance and interpretative value of sketching direction fi
 Click here to download and install: [Download](https://github.com/kieran-lucas/beginner_newton-direction-field/releases/download/v1.0.0/direction_field.exe)
 
 ## Design
-The app will look like that: 
+The overall layout of the application is shown below:
 <p align="center">
   <img src="assets/interface.png" width="600"/>
 </p>
