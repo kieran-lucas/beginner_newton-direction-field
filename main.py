@@ -14,7 +14,7 @@ app = QApplication(sys.argv)
 
 window = QMainWindow()
 window.setWindowTitle("Direction Field App")
-window.resize(800, 600)
+window.resize(750, 750)
 
 central_widget = QWidget()
 layout = QVBoxLayout(central_widget)
@@ -24,9 +24,9 @@ layout.addWidget(canvas)
 def f(x, y):
     return x - y
 
-density = 20
-x = np.linspace(-5, 5, density)
-y = np.linspace(-5, 5, density)
+density = 30
+x = np.linspace(-10, 10, density)
+y = np.linspace(-10, 10, density)
 
 X, Y = np.meshgrid(x, y)
 
@@ -36,6 +36,7 @@ DX = np.ones_like(DY)
 magnitude = np.sqrt(DX**2 + DY**2)
 DX = DX / magnitude
 DY = DY / magnitude
+canvas.ax.set_aspect("equal")
 
 canvas.ax.quiver(X, Y, DX, DY)
 canvas.draw()
