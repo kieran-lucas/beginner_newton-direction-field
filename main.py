@@ -1,23 +1,27 @@
-import numpy as np
-import matplotlib.pyplot as plt
+import sys
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout
+from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
+from matplotlib.figure import Figure
 
-def f(x, y):
-    return x - y
+class MplCanvas(FigureCanvasQTAgg):
+    def __init__(self):
+        fig = Figure()
+        super().__init__(fig)
+        self.ax = fig.add_subplot(111)
 
-density = 40
+app = QApplication(sys.argv)
 
-x = np.linspace(-5, 5, density)
-y = np.linspace(-5, 5, density)
+window = QMainWindow()
+window.setWindowTitle("Direction Field App")
+window.resize(800, 600)
 
-X, Y = np.meshgrid(x, y)
+central_widget = QWidget()
+layout = QVBoxLayout(central_widget)
 
-DY = f(X, Y)
-DX = np.ones_like(DY)
+canvas = MplCanvas()
+layout.addWidget(canvas)
 
-magnitude = np.sqrt(DX**2 + DY**2)
-DX = DX / magnitude
-DY = DY / magnitude
+window.setCentralWidget(central_widget)
+window.show()
 
-plt.figure(figsize=(6, 6))
-plt.quiver(X, Y, DX, DY)
-plt.show()
+sys.exit(app.exec())
