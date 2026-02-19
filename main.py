@@ -1,12 +1,23 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-x = np.linspace(-2, 2, 3)
-y = np.linspace(-2, 2, 3)
+def f(x, y):
+    return x - y
+
+density = 40
+
+x = np.linspace(-5, 5, density)
+y = np.linspace(-5, 5, density)
 
 X, Y = np.meshgrid(x, y)
 
-Z = X - Y
+DY = f(X, Y)
+DX = np.ones_like(DY)
 
-print("X =\n", X)
-print("Y =\n", Y)
-print("Z =\n", Z)
+magnitude = np.sqrt(DX**2 + DY**2)
+DX = DX / magnitude
+DY = DY / magnitude
+
+plt.figure(figsize=(6, 6))
+plt.quiver(X, Y, DX, DY)
+plt.show()
