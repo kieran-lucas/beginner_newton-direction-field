@@ -14,7 +14,7 @@ Click here to download and install: [Download](https://github.com/kieran-lucas/b
 ## Design
 The overall layout of the application is shown below:
 <p align="center">
-  <img src="assets/interface.png" width="600"/>
+  <img src="assets/interface.png" width="500"/>
 </p>
 
 
